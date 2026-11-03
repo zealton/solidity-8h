@@ -1,7 +1,8 @@
-# 课程网站：用 Caddy 托管 docsify 静态文档（Railway 会注入 PORT）
+# 课程网站：用 Caddy 托管静态页面（index.html + assets + Markdown 讲义）（Railway 会注入 PORT）
 FROM caddy:2.8-alpine
 WORKDIR /srv
-COPY index.html _sidebar.md README.md .nojekyll ./
+COPY index.html README.md ./
+COPY assets ./assets
 COPY docs ./docs
 COPY src ./src
 COPY solutions ./solutions
